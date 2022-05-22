@@ -1,16 +1,26 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: nginxapp1-ingress-service
   annotations:
     kubernetes.io/ingress.class: nginx  
 spec:  
-  rules:
-  - http:
-      paths:
-      - path: /
-        backend:
-          serviceName: app1-nginx-clusterip-service
-          servicePort: 80
+#rules:
+#  - http: 
+#      paths:
+#        - pathType: Prefix
+#          backend:
+#            service:
+#              name: app1-nginx-clusterip-service
+#              port:
+#                number: 80
+#          path: /
+  defaultBackend:
+    service:
+      name: app1-nginx-clusterip-service
+      port:
+        number: 80
 
-  
+#troubleshoot: logs ingress-controller pod :
+# solution : add annotaion or --set controller.watchIngressWithoutClass=true  
+#https://github.com/nginxinc/kubernetes-ingress/issues/2145#issuecomment-968207448

@@ -10,7 +10,7 @@
   - **Subscription:** Free Trial
   - **Resource Group:** Creat New: aks-rg1
   - **Kubernetes Cluster Name:** aksdemo1
-  - **Region:** (US) Central US
+  - **Region:** (US) Central US (use australia for "Node Size: DS2 v2")
   - **Kubernetes Version:** Select what ever is latest stable version
   - **Node Size:** Standard DS2 v2 (Default one)
   - **Node Count:** 1

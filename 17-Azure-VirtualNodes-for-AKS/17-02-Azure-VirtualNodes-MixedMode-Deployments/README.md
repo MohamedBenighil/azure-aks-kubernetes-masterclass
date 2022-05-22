@@ -48,7 +48,7 @@ kubectl get pods -o wide
 kubectl get nodes 
 kubectl get nodes -o wide
 
-# List Node Pools
+# List Node Pools (Optianal)
 az aks nodepool list --cluster-name aksdemo2 --resource-group aks-rg2 --output table
 
 # Access Application

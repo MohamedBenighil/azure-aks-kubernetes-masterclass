@@ -19,15 +19,14 @@ spec:
           image: stacksimplify/kube-nginxapp1:1.0.0
           ports:
             - containerPort: 80
-# To schedule pods on Azure Virtual Nodes            
+# To schedule pods on Azure Virtual Nodes 
       nodeSelector:
         kubernetes.io/role: agent
         beta.kubernetes.io/os: linux
         type: virtual-kubelet
       tolerations:
       - key: virtual-kubelet.io/provider
-        operator: Exists
-      - key: azure.com/aci
-        effect: NoSchedule            
+        operator: Exists          
 
-   
+
+  

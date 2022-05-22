@@ -1,0 +1,6 @@
+config:
+  enable-real-ip: "true"
+  use-forwarded-headers: "true"
+  proxy-real-ip-cidr: "130.211.0.0/22,35.191.0.0/16,[L7-LB_EXTERNAL_IP]/32"
+
+#https://blog.devgenius.io/secure-aks-ingress-with-letsencrypt-f56f698ec6b5

@@ -89,6 +89,8 @@ kubectl apply -f kube-manifests/
 # Verify pods
 kubectl get pods -o wide
 
+# PS: If pods not deployed correctly, hit;
+
 # Get Public IP
 kubectl get svc
 

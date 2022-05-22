@@ -15,6 +15,8 @@ spec:
         app: usermgmt-webapp
     spec:
       # Init Containers is a limitation currently in Azure Virtual Nodes
+      # i.e : if webapp po comes 1st, kill it (make sure mysql pod is present). 
+      #       Or deploy mysql 1st, then webapp
       #initContainers:
       #  - name: init-db
       #    image: busybox:1.31
@@ -47,6 +49,4 @@ spec:
         type: virtual-kubelet
       tolerations:
       - key: virtual-kubelet.io/provider
-        operator: Exists
-      - key: azure.com/aci
-        effect: NoSchedule            
+        operator: Exists        

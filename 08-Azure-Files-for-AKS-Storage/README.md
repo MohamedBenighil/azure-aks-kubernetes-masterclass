@@ -48,7 +48,7 @@
 kubectl apply -f kube-manifests-v1/
 
 # Verify SC, PVC, PV
-kubectl get sc, pvc, pv
+kubectl get sc,pvc,pv
 
 # Verify Pod
 kubectl get pods

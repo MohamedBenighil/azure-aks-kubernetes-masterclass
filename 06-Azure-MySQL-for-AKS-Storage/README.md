@@ -31,20 +31,20 @@
 - It will take close to 15 minutes to create the database. 
 
 ## Step-03: Update Security Settings for Database
-- Go to **Azure Database for MySQL Servers** -> **akswebappdb**
-- **Settings -> Connection Security**
-  - **Very Important**: Enable **Allow Access to Azure Services**
+- Go to **Azure Database for MySQL Servers** -> **akswebappdb2**
+- **Settings -> <s>Connection Security</s> Networking ->**
+  - **Very Important**: Enable **<s>Allow Access to Azure Services</s> Allow public access from any Azure service within Azure to this server** 
   - Update Firewall rules to allow from local desktop (Add current client IP Address)
-  - **SSL Settings**: Disabled  
+  - **SSL Settings**: Disabled  ( akswebappdb2 > settings > Server parameters > filter by : require_secure_transport : OFF)
   - Click on **Save**
 - It will take close to 15 minutes for changes to take place. 
 
 ```
 # Template
-mysql --host=mydemoserver.mysql.database.azure.com --user=myadmin@mydemoserver -p
+mysql --host=mydemoserver.mysql.database.azure.com --user=myadmin -p
 
 # 
-mysql --host=akswebappdb.mysql.database.azure.com --user=dbadmin@akswebappdb -p
+mysql --host=akswebappdb2.mysql.database.azure.com --user=dbadmin -p
 ```
 
 ## Step-04: Create Kubernetes externalName service Manifest and Deploy
